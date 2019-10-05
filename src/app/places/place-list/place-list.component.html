@@ -1,0 +1,25 @@
+<!-- <p>place-list works!</p> -->
+
+<div class="row">
+    <div class="col-md-5">
+      <h2>Interesting places from all over the world</h2>
+      <p>Browse interesting places and add your own!</p>
+      <ul class="list-group">
+        <li class="list-group-item"
+          *ngFor="let place of places"
+          (click)="selectPlace(place)"
+          [class.active]="place === selectedPlace">
+          {{place.name}}
+        </li>
+      </ul>
+      <button class="btn btn-warning" (click)="createNewPlace()">New</button>
+    </div>
+    <div class="col-md-5 col-md-offset-2">
+      <place-details
+        [place]="selectedPlace"
+        [createHandler]="addPlace"
+        [updateHandler]="updatePlace"
+        [deleteHandler]="deletePlace">
+      </place-details>
+    </div>
+  </div>
