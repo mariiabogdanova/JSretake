@@ -9,9 +9,6 @@
           *ngFor="let place of places"
           (click)="selectPlace(place)"
           [class.active]="place === selectedPlace">
-          <agm-map [latitude]="lat" [longitude]="lng">
-            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-          </agm-map>
           <b>{{place.name}}</b><br>{{place.description}}<br><b>Activities: </b>{{place.activities}}
         </li>
       </ul>
@@ -26,4 +23,3 @@
       </place-details>
     </div>
   </div>
-
