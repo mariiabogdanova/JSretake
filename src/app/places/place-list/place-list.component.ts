@@ -18,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
 import { Place } from '../place';
 import { PlaceService } from '../place.service';
 import { PlaceDetailsComponent } from '../place-details/place-details.component';
+import { AgmCoreModule } from '@agm/core';
 
 @Component({
   selector: 'place-list',
@@ -25,6 +26,12 @@ import { PlaceDetailsComponent } from '../place-details/place-details.component'
   styleUrls: ['./place-list.component.css'],
   providers: [PlaceService]
 })
+
+export class AppComponent {
+  title = 'Map';
+  lat = 51.678418;
+  lng = 7.809007;
+}
 
 export class PlaceListComponent implements OnInit {
 
