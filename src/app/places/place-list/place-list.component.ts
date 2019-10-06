@@ -18,7 +18,7 @@ import { Component, OnInit } from '@angular/core';
 import { Place } from '../place';
 import { PlaceService } from '../place.service';
 import { PlaceDetailsComponent } from '../place-details/place-details.component';
-z
+
 @Component({
   selector: 'place-list',
   templateUrl: './place-list.component.html',
