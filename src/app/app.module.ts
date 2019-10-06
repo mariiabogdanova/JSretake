@@ -16,7 +16,8 @@ import { PlaceListComponent } from './places/place-list/place-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
