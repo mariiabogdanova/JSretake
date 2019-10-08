@@ -1,4 +1,5 @@
 <!-- <p>place-list works!</p> -->
+<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyCZQaeF34-eJSqUKgQ9xnDTPb6oFPAGieU'></script>
 
 <div class="row">
     <div class="col-md-5">
@@ -9,7 +10,11 @@
           *ngFor="let place of places"
           (click)="selectPlace(place)"
           [class.active]="place === selectedPlace">
-          <b>{{place.name}}</b><br>{{place.description}}<br><b>Activities: </b>{{place.activities}}
+          <h1>{{place.name}}</h1>
+          <!-- <app-map [mapOf]='Oulu'></app-map> -->
+          <app-map></app-map>
+          <!-- <div #map id="map" style='width:100%;height:400px'></div> -->
+          <br>{{place.description}}<br><b>Activities: </b>{{place.activities}}
         </li>
       </ul>
       <button class="btn btn-warning" (click)="createNewPlace()">New</button>

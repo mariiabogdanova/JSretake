@@ -1,23 +1,9 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-place-list',
-//   templateUrl: './place-list.component.html',
-//   styleUrls: ['./place-list.component.css']
-// })
-// export class PlaceListComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Place } from '../place';
 import { PlaceService } from '../place.service';
 import { PlaceDetailsComponent } from '../place-details/place-details.component';
+import { MapComponent } from '../map/map.component';
+
 
 @Component({
   selector: 'place-list',
@@ -27,6 +13,7 @@ import { PlaceDetailsComponent } from '../place-details/place-details.component'
 })
 
 export class PlaceListComponent implements OnInit {
+  
 
   places: Place[]
   selectedPlace: Place
