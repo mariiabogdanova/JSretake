@@ -1,6 +1,6 @@
 <div *ngIf="place" class="row">
     <div class="col-md-12">
-      <h2 *ngIf="place._id">Learn more</h2>
+      <h2 *ngIf="place._id">Edit</h2>
       <h2 *ngIf="!place._id">New Place</h2>
     </div>
   </div>
@@ -19,7 +19,7 @@
         <input class="form-control" name="place-activities" [(ngModel)]="place.activities" placeholder="Interesting activities at the place"/>
       </div>
       <button class="btn btn-primary" *ngIf="!place._id" (click)="createPlace(place)">Create</button>
-      <button class="btn btn-info" *ngIf="place._id" (click)="updatePlace(place)">Update</button>
+      <button class="btn btn-info" *ngIf="place._id" (click)="updatePlace(place)">Update</button> 
       <button class="btn btn-danger" *ngIf="place._id" (click)="deletePlace(place._id)">Delete</button>
     </form>
   </div>
