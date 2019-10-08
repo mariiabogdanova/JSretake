@@ -18,6 +18,8 @@ export class PlaceListComponent implements OnInit {
   places: Place[]
   selectedPlace: Place
 
+  // placeName: string = getPlaceName(place: Place);
+
   constructor(private placeService: PlaceService) { }
 
   ngOnInit() {
@@ -41,6 +43,11 @@ export class PlaceListComponent implements OnInit {
 
   selectPlace(place: Place) {
     this.selectedPlace = place
+  }
+
+  getPlaceName(place: Place){
+    // this.selectedPlace = place
+    return place.name;
   }
 
   createNewPlace() {

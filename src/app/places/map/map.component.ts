@@ -34,16 +34,12 @@ interface Location {
 })
 
 
-  
-
-// @Input() mapOf: string;
-
 export class MapComponent implements OnInit {
 
   places: Place[]
-
-  // @Input() public mapOf: string;
-  
+  @Input() set name(name: string){
+    this.findLocation(name);
+  };
 
   geocoder:any;
   public location:Location = {
@@ -61,20 +57,7 @@ export class MapComponent implements OnInit {
 
 constructor(public mapsApiLoader: MapsAPILoader,
     private zone: NgZone,
-    private wrapper: GoogleMapsAPIWrapper,
-    private listComponent: PlaceListComponent, private placeService: PlaceService) {
-      this.placeService
-      .getPlaces()
-      .then((places: Place[]) => {
-        this.places = places.map((place) => {
-          // if (!place.description) {
-          //   place.description = ''
-          // }
-          console.log(place.name);
-          return place;
-        });
-      });
-    // console.log(this.listComponent.place.name);
+    private wrapper: GoogleMapsAPIWrapper) {
     this.mapsApiLoader = mapsApiLoader;
     this.zone = zone;
     this.wrapper = wrapper;
@@ -84,9 +67,7 @@ constructor(public mapsApiLoader: MapsAPILoader,
 }
 
 ngOnInit() {
-  
-
-  this.findLocation('Helsinki, Finland');
+  // this.findLocation('Helsinki, Finland');
   this.location.marker.draggable = true;
   
 }
